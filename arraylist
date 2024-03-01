@@ -1,0 +1,40 @@
+package collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class exemplo_collections {
+
+	public static void main(String[] args) {
+
+		ArrayList<String> cores = new ArrayList<String>();
+
+		Scanner leia = new Scanner(System.in);
+
+		// usuario digita as cores
+
+		for (int indice = 0; indice <= 4; indice++) {
+			System.out.println("Digite a " + (indice + 1) + "º cor: ");
+			String cor = leia.next();
+			cores.add(cor);
+		}
+
+		// mostra as cores adicionadas
+
+		System.out.println("\n\nAs cores adicionadas são: \n");
+
+		for (String cor : cores) {
+			System.out.println(cor);
+		}
+		// ordem alfabética
+
+		Collections.sort(cores);
+
+		System.out.println("\n\n\nOrdem alfabética das cores digitadas: \n");
+
+		for (String cor : cores) {
+			System.out.println(cor);
+		}
+	}
+}
