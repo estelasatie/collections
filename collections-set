@@ -1,0 +1,39 @@
+package collections;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
+
+public class ExercicioSet {
+
+	public static void main(String[] args) {
+
+		Set<Integer> numeros = new HashSet<Integer>();
+		Scanner ler = new Scanner(System.in);
+
+		// pede o número para o usuário
+		for (int i = 0; i < 10; i++) {
+			System.out.println("\n\nDigite 10 números inteiros não repetidos: \n\n");
+			int numero = ler.nextInt();
+
+			// verifica se o número é repetido
+			if (numeros.contains(numero)) {
+				System.out.println("\n\nNúmero repetido. Por favor, escolha outro!");
+				i--;
+
+				// adiciona o número a lista
+			} else {
+				numeros.add(numero);
+			}
+		}
+
+		// mostra a lisga de números
+		System.out.println("\n\nOs números da lista são: \n\n");
+
+		Iterator<Integer> iterator = numeros.iterator();
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+	}
+}
